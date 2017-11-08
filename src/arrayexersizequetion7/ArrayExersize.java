@@ -1,20 +1,5 @@
 package arrayexersizequetion7;
 
-/********************************************************************
- * Programmer:	sveinson
- * Class:       CS30S
- *
- * Assignment:      simple static method example
- * Program Name:    simpleStaticMethodExample
- *
- * Description: use static methods to perform some simple
- *              operations.
- *
- * Input: some integers from the keyboard
- *
- * Output: banners and closing messages
- ***********************************************************************/
- 
  // import java libraries here as needed
  
  import javax.swing.*;
@@ -28,7 +13,7 @@ public class ArrayExersize{  // begin class
     public static void main(String[] args) throws IOException{  // begin main
     
     // ********* declaration of constants **********
-    	        final int max = 100;  		// maximum number of randoms allowed
+    	        
     // ********** declaration of variables **********
     
     	String strin;				// string data input from keyboard
@@ -42,17 +27,12 @@ public class ArrayExersize{  // begin class
     	String tabSpace = "      ";	// six spaces
           Random r = new Random();		// create new random object
        int rand ;
-             
-        
-        
-        String change;
-        int secreq;
-        int request;
-        
 
-        int count = 0 ; //a varible for counting the iterations of loops and assigning the arry chunk to be printed accordingly
-
-    	//ConsoleReader console = new ConsoleReader(System.in);
+        int count = 0 ; //a varible for counting the i
+        int max = 100;  		// maximum number of randoms allowedterations of loops and assigning the arry chunk to be printed accordingly
+        int a;
+    	
+        //ConsoleReader console = new ConsoleReader(System.in);
     	//DecimalFormat df1 = new DecimalFormat("$##.00");
     	
     	//BufferedReader fin = new BufferedReader(new FileReader("name of file"));
@@ -73,10 +53,13 @@ JOptionPane.showMessageDialog(null, banner);
             int arreh[] = new int[max];
     // ************************ processing ***************************
 
-          for (count = 0; count < max; count++){
-           arreh[count]   = r.nextInt(128);				// generate a random number between 0 and 127 and assigns it to the array   
-          }//end for
-    
+   a = r.nextInt(128);
+          while( count < max && 0 != a){ 
+           arreh[count] = a;// generate a random number between 0 and 127 and assigns it to the array 
+           a = r.nextInt(128);
+           count ++; 
+          }//end while
+           max = count;
           
     // ************************ print output ****************************
 
@@ -85,6 +68,7 @@ JOptionPane.showMessageDialog(null, banner);
     System.out.println("average = " + averagearray(arreh, max));
     System.out.println("biggest number = "+ bignumarray(arreh,max));
     System.out.println("smallest number = "+ smallnumarray(arreh,max));
+    System.out.println("there are " + max + " numbers in the array");
     
         // ******** closing message *********
         
